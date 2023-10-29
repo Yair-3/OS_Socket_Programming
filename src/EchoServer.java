@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+
+// PROJECT PARTNERS MARK KIMMEL AND DOVI KIMMEL
 public class EchoServer {
     public static void main(String[] args) throws IOException {
 
