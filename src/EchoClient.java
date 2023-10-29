@@ -16,7 +16,7 @@ public class EchoClient {
 //        String hostName = args[0];
 //        int portNumber = Integer.parseInt(args[1]);
 
-        String hostName = "192.168.1.135";
+        String hostName = "localhost";
         int portNumber = 30121;
 
         try (

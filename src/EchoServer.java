@@ -47,6 +47,7 @@ public class EchoServer {
                     for (Packet packet : packetList) {
                         int odds = random.nextInt(100);
                         if (odds > 20) {
+                            packet.setSent(true);
                             out.println(packet.toFormattedString());
                         }
 
@@ -61,6 +62,7 @@ public class EchoServer {
                         for (Packet packet : packetList) {
                             if (packet.getSequenceNum() == pNum) {
                                 if (random.nextInt(100) > 20 ) {
+                                    packet.setSent(true);
                                     out.println(packet.toFormattedString());
                                 }
                             }
