@@ -1,0 +1,23 @@
+Protocol and Design Explanation
+Part 1
+
+
+1-Packet class: 3 fields. a string, sequence number, and boolean indicating if it was sent or not. 
+2-Packet Loss: 20 percent chance to drop. If so, the packet will not be sent. The server itself will not know about any packet loss. The client will need to figure that out based on the info sent to it.
+3-Sending lost packets: After all packets are sent, the client will check to see if it has all of the expected packets. If not, it will request them from the server. 
+4-Packet Reordering: Once all packets are in the client, the client will reorder the packets into what it was originally.
+5-Final Packet: The server should always send a final packet indicating that all packets have been sent. The client will wait for this packet to check if it has received all the expected packets.
+
+
+
+Step by step: 
+
+1-The client sends a "starting" message to the server.
+2-The server generates a random list of 20 packets, each containing a different lowercase letter and a sequence number.
+3-The server sends the packets to the client in random order with a 20% chance of dropping each packet.
+4-The server sends a string "END_OF_TRANSMISSION" to the client, followed by the total number of packets sent.
+5-The client checks to see if it received all of the packets. If not, it sends a MISSING: message to the server, followed by a list of the missing packet sequence numbers.
+6-The server resends the missing packets, with a 20% chance of dropping each packet again.
+7-The client repeats steps 5 and 6 until it receives all of the packets.
+8-The client sorts the packets in order by sequence number and displays the message to the user.
+
