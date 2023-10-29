@@ -1,3 +1,4 @@
 Assumtpions we made for the project which can be changed with a little different coding. 
 1 - The client has a pre - determined starting message 
-2-  The server has a pre determined message that it will send back
+2 - The server has a pre determined message that it will send back
+3- command line args are commented out, can be placed back in if needed. 
